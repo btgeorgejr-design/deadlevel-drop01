@@ -94,8 +94,8 @@ footer .wrap { padding-block: 22px 40px; font-size: 13px; color: var(--ash); dis
       <h1>Trade <span>Back</span> Prints</h1>
     </div>
     <div class="stats">
-      <div class="stat"><b>17</b><small>Shirts</small></div>
-      <div class="stat"><b>9</b><small>Trades</small></div>
+      <div class="stat"><b>24</b><small>Shirts</small></div>
+      <div class="stat"><b>10</b><small>Trades</small></div>
       <div class="stat"><b>2</b><small>Humor lanes</small></div>
     </div>
   </div>
@@ -104,14 +104,14 @@ footer .wrap { padding-block: 22px 40px; font-size: 13px; color: var(--ash); dis
 <main class="wrap">
   <section class="brief">
     <div>
-      <p>Seventeen back-print tees, one trade per shirt. Most trades get two takes: a <b>dark</b> one (skeleton humor built on a real trade term) and a <b>dirty</b> one (a double meaning the crew will get). All of them use the same friendly skeleton, flat vintage colors and a worn, distressed print.</p>
+      <p>Twenty-four back-print tees, one trade per shirt. Most trades get two takes: a <b>dark</b> one (skeleton humor built on a real trade term) and a <b>dirty</b> one (a double meaning the crew will get). All of them use the same friendly skeleton, flat vintage colors and a worn, distressed print.</p>
       <p class="muted">Trades picked from what sells: electrical, mechanics and welders lead the trade-tee best-seller lists. HVAC is a proven seller and a Florida year-rounder. Landscape and hardscape barely show up anywhere, which makes them an open lane, and that's who sees your ads.</p>
       <p class="muted">Tap <b>Show art</b> on any card to see the flat print file.</p>
     </div>
     <div class="spec">
       <img src="img/front.jpg" alt="Black tee front with the DL monogram on the left chest">
       <dl>
-        <dt>Front</dt><dd>DL monogram, left chest, 3.5″ (same on all 17)</dd>
+        <dt>Front</dt><dd>DL monogram, left chest, 3.5″ (same on all 24)</dd>
         <dt>Back</dt><dd>Trade print, 11–12″ wide</dd>
         <dt>Shirt</dt><dd>Black. Mockups show a Comfort Colors 1717; blank not final</dd>
         <dt>Print</dt><dd>DTF, printed in-house in Florida</dd>
@@ -122,7 +122,7 @@ footer .wrap { padding-block: 22px 40px; font-size: 13px; color: var(--ash); dis
 
   <h2>The Lineup</h2>
   <div class="filters" role="group" aria-label="Filter by trade">
-    <button type="button" data-f="all" aria-pressed="true">All 17</button>
+    <button type="button" data-f="all" aria-pressed="true">All 24</button>
     <button type="button" data-f="electrician" aria-pressed="false">Electrician</button>
     <button type="button" data-f="mechanic" aria-pressed="false">Mechanic</button>
     <button type="button" data-f="welder" aria-pressed="false">Welder</button>
@@ -131,6 +131,7 @@ footer .wrap { padding-block: 22px 40px; font-size: 13px; color: var(--ash); dis
     <button type="button" data-f="concrete" aria-pressed="false">Concrete</button>
     <button type="button" data-f="tree" aria-pressed="false">Tree Service</button>
     <button type="button" data-f="plumber" aria-pressed="false">Plumber</button>
+    <button type="button" data-f="aviation" aria-pressed="false">Aviation</button>
   </div>
   <div class="grid" id="grid"></div>
 </main>
@@ -161,13 +162,22 @@ const shirts = [
     who: "HVAC techs, especially in Florida and the South.", size: "12 × 13.0″" },
   { id: "dead-level", title: "Dead Level", trade: "concrete", tradeLabel: "Concrete", lane: "dark",
     joke: "Dead level is the builder's word for perfectly flat. He troweled the slab dead level, bubble dead center, and he's dead too. It's the brand name, so this is the signature shirt.",
-    who: "Concrete finishers and flatwork crews. Doubles as the brand tee for anyone.", size: "12 × 12.5″" },
+    who: "Concrete finishers and flatwork crews. Doubles as the brand tee for anyone.", size: "12 × 12.2″" },
   { id: "widowmaker", title: "Widowmaker", trade: "tree", tradeLabel: "Tree Service", lane: "dark",
     joke: "A widowmaker is a dead limb hanging overhead, the thing that kills tree guys. He's tied in and cutting a huge one right over his head, still grinning.",
     who: "Arborists and tree service climbers.", size: "12 × 12.5″" },
   { id: "hot-on-the-left", title: "Hot on the Left, Cold on the Right", trade: "plumber", tradeLabel: "Plumber", lane: "dark",
     joke: "Rule one of plumbing, the first thing every apprentice learns. Him sweating a copper joint like a pro, glasses on.",
     who: "Plumbers and pipefitters. The old 'rules of plumbing' joke every crew knows.", size: "12 × 13.0″" },
+  { id: "dead-stick-work-stand", title: "Dead Stick", trade: "aviation", tradeLabel: "Aviation", lane: "dark",
+    joke: "Dead stick is flying with the engine out. Prop stopped, smoke coming off it, and he's up on the work stand shrugging.",
+    who: "A&P mechanics and anyone who's worked on small planes.", size: "12 × 13.2″" },
+  { id: "dead-stick-cornfield", title: "Dead Stick", trade: "aviation", tradeLabel: "Aviation", lane: "dark",
+    joke: "Same term, later in the story. It came down in the corn, and he got called out to the field to fix it.",
+    who: "A&P mechanics and small-plane guys. Run it against the work stand version and let the ads pick the winner.", size: "12 × 12.1″" },
+  { id: "hangar-king", title: "Hangar King", trade: "aviation", tradeLabel: "Aviation", lane: "dark",
+    joke: "Boots up on the toolbox, shop chair for a throne, torque wrench for a scepter. It's his hangar.",
+    who: "Aircraft mechanics, especially the guy who's run the shop forever.", size: "12 × 12.1″" },
   { id: "fill-your-gap", title: "I'll Fill Your Gap", trade: "welder", tradeLabel: "Welder", lane: "dirty",
     joke: "Welding fills the gap between two plates. He'll fill yours too, with a wink.",
     who: "Welders. Pairs with Don't Look at the Light.", size: "11 × 14.1″" },
@@ -195,6 +205,18 @@ const shirts = [
   { id: "ive-seen-some-shit", title: "I've Seen Some Shit", trade: "plumber", tradeLabel: "Plumber", lane: "dirty",
     joke: "A plumber has, literally. Crawlspace veteran on a bucket, coffee in hand, nothing left that can surprise him.",
     who: "Plumbers, drain and sewer guys, anyone who's crawled under a house.", size: "12 × 12.3″" },
+  { id: "nice-rack-thumbs-up", title: "Nice Rack", trade: "aviation", tradeLabel: "Aviation", lane: "dirty",
+    joke: "The avionics rack is the shelf of electronics boxes in a plane. Thumbs up and a wink, and he means the rack.",
+    who: "Avionics techs. Everyone else gets the other joke.", size: "12 × 12.5″" },
+  { id: "nice-rack-crouched", title: "Nice Rack", trade: "aviation", tradeLabel: "Aviation", lane: "dirty",
+    joke: "Same joke, no wink. He's down in the bay with a hand on the rack, and the title does the work.",
+    who: "Avionics techs. Run it against the thumbs up version and let the ads pick the winner.", size: "12 × 12.4″" },
+  { id: "hangar-queen-ladder", title: "Hangar Queen", trade: "aviation", tradeLabel: "Aviation", lane: "dirty",
+    joke: "A hangar queen is the plane that never leaves maintenance. Here she runs the place, and the skeleton on the ladder forgot what he was doing.",
+    who: "Aircraft mechanics. Old nose-art pin-up style, so warbird guys should like it too.", size: "12 × 11.8″" },
+  { id: "hangar-queen-wing", title: "Hangar Queen", trade: "aviation", tradeLabel: "Aviation", lane: "dirty",
+    joke: "Same term, different view. She's up on the wing, and he's rolled out on the creeper looking up.",
+    who: "Aircraft mechanics and warbird guys. Run it against the ladder version and let the ads pick the winner.", size: "12 × 11.8″" },
 ];
 
 const grid = document.getElementById("grid");
