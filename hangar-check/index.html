@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Dead Level Hangar Check</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a short ask up top, then numbered shirts in reading order, each with its own questions. */
+:root{
+  --ink:#0e0d0c; --panel:#181614; --raise:#211e1b; --line:#302b26;
+  --bone:#ece5d7; --muted:#a39a8d; --rust:#B7410D; --rust-hi:#d4561e;
+  --display:"Anton","Impact","Arial Narrow",sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ink);color:var(--bone);font-family:var(--body);font-size:16px;line-height:1.55;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{padding-block:34px 18px;border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--rust-hi)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(38px,7vw,64px);line-height:1;margin:8px 0 14px;text-wrap:balance}
+.ask{max-width:60ch;margin:0 0 14px}
+.how{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;color:var(--muted);font-size:14px}
+.how li::before{content:"▸ ";color:var(--rust-hi)}
+h2.group{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:34px 0 14px;font-weight:500}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
+.shirt{background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.pic{position:relative;background:#000;aspect-ratio:4/5}
+.pic img{width:100%;height:100%;object-fit:contain;display:block}
+.num{position:absolute;left:10px;top:10px;font-family:var(--display);font-size:30px;line-height:1;background:var(--rust);color:var(--bone);min-width:44px;text-align:center;padding:6px 8px 4px;border-radius:4px}
+.flip{position:absolute;left:10px;bottom:10px;display:flex;gap:4px}
+.flip button{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;background:rgba(14,13,12,.82);color:var(--bone);border:1px solid var(--line);border-radius:4px;padding:5px 9px;cursor:pointer}
+.flip button[aria-pressed="true"]{background:var(--bone);color:var(--ink)}
+.body{padding:14px 16px 18px;display:flex;flex-direction:column;gap:10px}
+h3{font-family:var(--display);font-weight:400;font-size:27px;line-height:1.05;margin:0}
+.joke{margin:0;font-size:15px;color:var(--bone)}
+.qs{margin:0;padding:12px 14px;background:var(--raise);border-radius:4px;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.qs li{display:grid;grid-template-columns:auto 1fr;gap:8px}
+.qs li::before{content:"?";font-family:var(--display);color:var(--rust-hi)}
+footer{padding-block:40px 56px;color:var(--muted);font-size:14px}
+footer b{color:var(--bone)}
+button:focus-visible{outline:2px solid var(--rust-hi);outline-offset:2px}
+@media (max-width:420px){.list{grid-template-columns:1fr}h3{font-size:24px}}
+</style>
+
+<header><div class="wrap">
+  <div class="kicker">Dead Level Supply Co. · shirts for the trades</div>
+  <h1>Hangar Check</h1>
+  <p class="ask">You've worked in a shop and you work on planes now, so you'll catch what we can't. Look these over and be blunt. If a term is wrong, a tool is wrong, or nobody you work with would wear it, say so.</p>
+  <ul class="how">
+    <li>Text back by number: "4: wrong wrench"</li>
+    <li>Tap Art to see the print up close</li>
+    <li>Not final, nothing printed yet</li>
+  </ul>
+</div></header>
+
+<main class="wrap" id="main"></main>
+
+<footer><div class="wrap">Every shirt is a back print on a black tee. Answer what you want and skip the rest. <b>The most useful thing you can tell us is what looks wrong to someone who actually does the work.</b></div></footer>
+
+<script>
+const ITEMS = [{"n": 1, "id": "dead-stick-work-stand", "title": "Dead Stick", "joke": "Dead stick = engine out, prop stopped. Plane's up on the stand, smoking, and he's shrugging.", "q": ["Do guys in the hangar actually say \"dead stick\"?", "Does the plane, the stand and the setup look right to you, or is something off?"], "size": "12 \u00d7 13.2\u2033", "group": "Planes"}, {"n": 2, "id": "dead-stick-cornfield", "title": "Dead Stick (field version)", "joke": "Same term, later in the story: it came down in a cornfield and he got called out to fix it.", "q": ["Which Dead Stick is better, this one or #1?"], "size": "12 \u00d7 12.1\u2033", "group": "Planes"}, {"n": 3, "id": "hangar-king", "title": "Hangar King", "joke": "Boots up on the toolbox, shop chair for a throne, torque wrench in hand. It's his hangar.", "q": ["Is that the right gear for an aircraft mechanic, or does it look like a car shop?", "Is there a guy like this at your work?"], "size": "12 \u00d7 12.1\u2033", "group": "Planes"}, {"n": 4, "id": "nice-rack-thumbs-up", "title": "Nice Rack", "joke": "The avionics rack, the shelf of electronics boxes in the plane. Thumbs up and a wink.", "q": ["Do you call it the avionics rack, or something else?", "Does the joke land with plane guys, or is it a stretch?"], "size": "12 \u00d7 12.5\u2033", "group": "Planes"}, {"n": 5, "id": "nice-rack-crouched", "title": "Nice Rack (no wink)", "joke": "Same joke, no wink. He's down in the bay with a hand on the rack.", "q": ["Thumbs up (#4) or this one?"], "size": "12 \u00d7 12.4\u2033", "group": "Planes"}, {"n": 6, "id": "hangar-queen-ladder", "title": "Hangar Queen", "joke": "A hangar queen is the plane that never leaves maintenance. Here she runs the place, pin-up nose-art style.", "q": ["Is \"hangar queen\" a term your shop uses?", "Anything about the plane or ladder that looks wrong?"], "size": "12 \u00d7 11.8\u2033", "group": "Planes"}, {"n": 7, "id": "hangar-queen-wing", "title": "Hangar Queen (wing)", "joke": "Same term, different view: she's up on the wing, he's on the creeper looking up.", "q": ["Ladder (#6) or wing?"], "size": "12 \u00d7 11.8\u2033", "group": "Planes"}, {"n": 8, "id": "dead-on-arrival", "title": "Dead on Arrival", "joke": "The truck got towed in dead. The mechanic shrugs at it.", "q": ["From your shop days, does the truck and engine bay look right?"], "size": "12 \u00d7 12.3\u2033", "group": "Shop"}, {"n": 9, "id": "free-oil-check", "title": "Free Oil Check", "joke": "Every shop sign has it. He's offering it with a dipstick and a wink.", "q": ["Would shop guys wear this?"], "size": "12 \u00d7 12.3\u2033", "group": "Shop"}, {"n": 10, "id": "free-fluid-check", "title": "Free Fluid Check", "joke": "Same truck and joke, with \"fluid\" instead of \"oil.\"", "q": ["Oil (#9) or fluid: which one lands better?"], "size": "12 \u00d7 12.2\u2033", "group": "Shop"}, {"n": 11, "id": "dead-short", "title": "Dead Short", "joke": "A dead short is a direct short with sparks. It blew up in his face and he's still grinning.", "q": ["Did you use \"dead short\" in the auto shop, or is it just an electrician thing?"], "size": "12 \u00d7 14.0\u2033", "group": "Shop"}];
+const view = {};
+const esc = t => String(t).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function card(s){
+  const v = view[s.id] || "tee";
+  return `<article class="shirt" data-id="${s.id}">
+    <div class="pic">
+      <img src="../img/${s.id}-${v}.jpg" alt="#${s.n} ${esc(s.title)}, ${v==="tee"?"on a black tee":"print art"}" loading="lazy">
+      <span class="num" aria-hidden="true">${s.n}</span>
+      <div class="flip"><button type="button" data-view="tee" aria-pressed="${v==="tee"}">On tee</button><button type="button" data-view="art" aria-pressed="${v==="art"}">Art</button></div>
+    </div>
+    <div class="body">
+      <h3>${esc(s.title)}</h3>
+      <p class="joke">${esc(s.joke)}</p>
+      <ul class="qs">${s.q.map(q => `<li>${esc(q)}</li>`).join("")}</ul>
+    </div>
+  </article>`;
+}
+function render(){
+  const groups = [["Planes","Your world now"],["Shop","From your shop days"]];
+  document.getElementById("main").innerHTML = groups.map(([g,label]) =>
+    `<h2 class="group">${label}</h2><div class="list">${ITEMS.filter(s => s.group===g).map(card).join("")}</div>`).join("");
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-view]"); if (!b) return;
+  view[b.closest(".shirt").dataset.id] = b.dataset.view; render();
+});
+render();
+</script>
+
+</body>
+</html>
